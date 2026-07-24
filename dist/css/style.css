@@ -49,6 +49,20 @@ body {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 18px 0;
+  }
+
+  .navbar-box .menu {
+    gap: 18px;
+  }
+
+  .navbar-box .menu li a {
+    font-size: 15px;
+  }
+}
+
 /* Hero */
 
 .hero {
@@ -500,7 +514,7 @@ header svg {
 }
 /*proyek*/
 
-/*sertifikat*/
+/*SERTIFIKAT*/
 
 .sertifikat {
   padding: 100px 0;
@@ -525,11 +539,15 @@ header svg {
   gap: 20px;
 }
 
+/* Card Sertifikat */
+
 .sertifikat-card {
+  overflow: hidden;
+
   background: #1b1c22;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  overflow: hidden;
+
   transition: 0.3s;
 }
 
@@ -544,6 +562,8 @@ header svg {
   object-fit: cover;
 }
 
+/* Isi Card */
+
 .sertifikat-content {
   padding: 20px;
 }
@@ -553,26 +573,32 @@ header svg {
 }
 
 .sertifikat-content p {
+  margin-bottom: 20px;
+
   font-size: 13px;
   color: #d7d7d7;
-  margin-bottom: 20px;
 }
 
 .sertifikat-content a {
   display: block;
+
+  padding: 12px;
+
   text-align: center;
   text-decoration: none;
-  background: #4a2872;
-  color: #fff;
-  padding: 12px;
-  border-radius: 10px;
   font-weight: 600;
+
+  color: #fff;
+  background: #4a2872;
+  border-radius: 10px;
 }
 
 .sertifikat-content a:hover {
   background: #fff;
   color: #4a2872;
 }
+
+/*RESPONSIVE*/
 
 /* Tablet */
 
@@ -591,8 +617,8 @@ header svg {
 
   .sertifikat-box {
     display: flex;
-    overflow-x: auto;
     gap: 20px;
+    overflow-x: auto;
 
     scroll-snap-type: x mandatory;
   }
@@ -603,35 +629,12 @@ header svg {
 
   .sertifikat-card {
     flex: 0 0 100%;
-
     scroll-snap-align: center;
   }
 }
-/*sertifikat*/
 
-/* Tombol Geser Sertifikat */
-.next-btn {
-  position: fixed;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 50%;
-  background: #1b1c22;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-}
+/*TOMBOL GESER SERTIFIKAT*/
 
-@media (min-width: 769px) {
-  .next-btn {
-    display: none;
-  }
-}
-
-/* Tombol Geser Sertifikat */
 .sertifikat-wrapper {
   position: relative;
 }
@@ -640,15 +643,20 @@ header svg {
   position: absolute;
   top: 50%;
   right: 10px;
-  transform: translateY(-50%);
+
+  display: none;
+
   width: 40px;
   height: 40px;
+
   border: none;
   border-radius: 50%;
+
   background: #4a2872;
-  color: white;
+  color: #fff;
+
   cursor: pointer;
-  display: none;
+  transform: translateY(-50%);
 }
 
 @media (max-width: 768px) {
@@ -657,7 +665,7 @@ header svg {
   }
 }
 
-/*kontak*/
+/*KONTAK*/
 
 .kontak {
   padding: 100px 0;
@@ -682,6 +690,8 @@ header svg {
   gap: 50px;
 }
 
+/* Info Kontak */
+
 .info {
   display: flex;
   align-items: center;
@@ -690,18 +700,21 @@ header svg {
 }
 
 .info i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 50px;
   height: 50px;
   background: #4a2872;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .info p {
   color: #d7d7d7;
 }
+
+/* Social Media */
 
 .social {
   margin-top: 40px;
@@ -711,18 +724,22 @@ header svg {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+
   width: 45px;
   height: 45px;
-  background: #1b1c22;
-  color: white;
-  border-radius: 50%;
-  text-decoration: none;
   margin-right: 10px;
+
+  text-decoration: none;
+  color: #fff;
+  background: #1b1c22;
+  border-radius: 50%;
 }
 
 .social a:hover {
   background: #4a2872;
 }
+
+/* Form */
 
 #contact-form {
   display: flex;
@@ -735,9 +752,10 @@ header svg {
   padding: 15px;
   border: none;
   border-radius: 10px;
-  background: #1b1c22;
-  color: white;
   outline: none;
+
+  background: #1b1c22;
+  color: #fff;
 }
 
 #contact-form textarea {
@@ -748,8 +766,9 @@ header svg {
   padding: 15px;
   border: none;
   border-radius: 10px;
+
   background: #4a2872;
-  color: white;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -757,25 +776,30 @@ header svg {
   background: #5d3590;
 }
 
-@media (max-width: 768px) {
-  .kontak-box {
-    grid-template-columns: 1fr;
-  }
+/*Responsive*/
 
+@media (max-width: 768px) {
   .kontak h1 {
     font-size: 34px;
   }
+
+  .kontak-box {
+    grid-template-columns: 1fr;
+  }
 }
-/*kontak*/
+
+/*FOOTER*/
 
 footer {
-  background-color: #4a2872;
-  margin-top: -10;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+
+  padding: 20px;
+  margin-top: 0;
+
+  background-color: #4a2872;
+  color: #fff;
 }
 
 footer span {
@@ -788,8 +812,8 @@ footer .social {
 }
 
 footer .social a {
-  color: white;
   text-decoration: none;
+  color: #fff;
   font-size: 30px;
 }
 
