@@ -500,6 +500,272 @@ header svg {
 }
 /*proyek*/
 
+/*sertifikat*/
+
+.sertifikat {
+  padding: 100px 0;
+  color: #fff;
+}
+
+.sertifikat h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.sertifikat .container > p {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #d7d7d7;
+}
+
+.sertifikat-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sertifikat-card {
+  background: #1b1c22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.sertifikat-card:hover {
+  transform: translateY(-8px);
+  border-color: #4a2872;
+}
+
+.sertifikat-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.sertifikat-content {
+  padding: 20px;
+}
+
+.sertifikat-content h3 {
+  margin-bottom: 10px;
+}
+
+.sertifikat-content p {
+  font-size: 13px;
+  color: #d7d7d7;
+  margin-bottom: 20px;
+}
+
+.sertifikat-content a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: #4a2872;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.sertifikat-content a:hover {
+  background: #fff;
+  color: #4a2872;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .sertifikat-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* HP */
+
+@media (max-width: 768px) {
+  .sertifikat h1 {
+    font-size: 34px;
+  }
+
+  .sertifikat-box {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+
+    scroll-snap-type: x mandatory;
+  }
+
+  .sertifikat-box::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sertifikat-card {
+    flex: 0 0 100%;
+
+    scroll-snap-align: center;
+  }
+}
+/*sertifikat*/
+
+/* Tombol Geser Sertifikat */
+.next-btn {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: #1b1c22;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  .next-btn {
+    display: none;
+  }
+}
+
+/* Tombol Geser Sertifikat */
+.sertifikat-wrapper {
+  position: relative;
+}
+
+.next-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #4a2872;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .next-btn {
+    display: block;
+  }
+}
+
+/*kontak*/
+
+.kontak {
+  padding: 100px 0;
+  color: #fff;
+}
+
+.kontak h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.kontak > .container > p {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #d7d7d7;
+}
+
+.kontak-box {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 50px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.info i {
+  width: 50px;
+  height: 50px;
+  background: #4a2872;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info p {
+  color: #d7d7d7;
+}
+
+.social {
+  margin-top: 40px;
+}
+
+.social a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background: #1b1c22;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.social a:hover {
+  background: #4a2872;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #1b1c22;
+  color: white;
+  outline: none;
+}
+
+#contact-form textarea {
+  resize: none;
+}
+
+#contact-form button {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #4a2872;
+  color: white;
+  cursor: pointer;
+}
+
+#contact-form button:hover {
+  background: #5d3590;
+}
+
+@media (max-width: 768px) {
+  .kontak-box {
+    grid-template-columns: 1fr;
+  }
+
+  .kontak h1 {
+    font-size: 34px;
+  }
+}
 /*kontak*/
 
 footer {
@@ -561,11 +827,11 @@ footer .social a {
 }
 
 .scroll-up:hover {
-  background-color: white;
+  background-color: #4a2872;
 }
 
 .scroll-up a {
-  color: #4a2872;
+  color: white;
 }
 
 @media (max-width: 475px) {
