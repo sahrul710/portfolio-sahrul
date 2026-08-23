@@ -388,7 +388,7 @@ header svg {
 
 .proyek-box .box:hover {
   transform: translateY(-8px);
-  border-color: #6d5ef8;
+  border-color: #4a2872;
 }
 
 .proyek-box img {
@@ -446,7 +446,7 @@ header svg {
   font-weight: 600;
   color: #fff;
   border-radius: 10px;
-  background: linear-gradient(135deg, #6d5ef8, #8b7bff);
+  background: linear-gradient(135deg, #4a2872, #4a2872);
   transition: 0.3s;
 }
 
