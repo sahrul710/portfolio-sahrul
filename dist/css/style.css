@@ -6,10 +6,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  background: #111217;
-}
-
 .container {
   width: 80%;
   margin-inline: auto;
@@ -20,8 +16,6 @@ body {
     width: 90%;
   }
 }
-
-/* Navbar */
 
 .navbar {
   padding: 30px 0;
@@ -63,8 +57,6 @@ body {
   }
 }
 
-/* Hero */
-
 .hero {
   min-height: 80vh;
   display: flex;
@@ -105,8 +97,6 @@ body {
   color: white;
 }
 
-/* Responsive */
-
 @media (max-width: 768px) {
   .hero-box h1 {
     font-size: 45px;
@@ -138,14 +128,6 @@ body {
     font-size: 14px;
   }
 }
-
-/* hero */
-
-header svg {
-  margin-bottom: -10px;
-}
-
-/* tentang */
 
 .tentang {
   padding-block: 50px;
@@ -200,8 +182,6 @@ header svg {
   font-weight: 700;
 }
 
-/* Tools */
-
 .tentang-box .tools {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -240,8 +220,6 @@ header svg {
   border-radius: 8px;
   object-fit: contain;
 }
-
-/* Skill */
 
 .skill-header {
   display: flex;
@@ -283,8 +261,6 @@ header svg {
   text-align: right;
 }
 
-/* Persentase */
-
 .progress.html {
   width: 80%;
 }
@@ -293,9 +269,6 @@ header svg {
 }
 .progress.python {
   width: 65%;
-}
-.progress.bootstrap {
-  width: 70%;
 }
 .progress.javascript {
   width: 55%;
@@ -328,16 +301,6 @@ header svg {
   width: 85%;
 }
 
-/* Kategori */
-
-.kategori {
-  grid-column: 1/-1;
-  width: 100%;
-  margin: 10px 0 20px;
-}
-
-/* Responsive */
-
 @media (max-width: 992px) {
   .tentang-box .box:first-child {
     grid-template-columns: 1fr;
@@ -347,10 +310,6 @@ header svg {
     text-align: center;
   }
 }
-
-/*tentang*/
-
-/* Proyek */
 
 .proyek {
   padding: 90px 0;
@@ -480,10 +439,6 @@ header svg {
   }
 }
 
-/*proyek*/
-
-/* SERTIFIKAT */
-
 .sertifikat {
   padding: 100px 0;
   color: #fff;
@@ -557,8 +512,6 @@ header svg {
   color: #4a2872;
 }
 
-/* Tombol Geser */
-
 .sertifikat-wrapper {
   position: relative;
 }
@@ -578,15 +531,11 @@ header svg {
   display: none;
 }
 
-/* Tablet */
-
 @media (max-width: 992px) {
   .sertifikat-box {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* HP */
 
 @media (max-width: 768px) {
   .sertifikat h1 {
@@ -614,9 +563,6 @@ header svg {
   }
 }
 
-/* Sertifikat */
-
-/* Kontak */
 .kontak {
   padding: 100px 0;
   color: #fff;
@@ -639,8 +585,6 @@ header svg {
   grid-template-columns: 1fr 1.5fr;
   gap: 50px;
 }
-
-/* Info */
 
 .info {
   display: flex;
@@ -675,8 +619,6 @@ header svg {
   color: #fff;
 }
 
-/* Social */
-
 .social {
   margin-top: 40px;
 }
@@ -703,8 +645,6 @@ header svg {
   background: #4a2872;
   transform: translateY(-3px);
 }
-
-/* Form */
 
 #contact-form {
   display: flex;
@@ -748,8 +688,6 @@ header svg {
   transform: translateY(-2px);
 }
 
-/* Responsive */
-
 @media (max-width: 768px) {
   .kontak h1 {
     font-size: 34px;
@@ -760,45 +698,6 @@ header svg {
     gap: 35px;
   }
 }
-/* Kontak */
-
-/*FOOTER*/
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 20px;
-  margin-top: 0;
-
-  background-color: #4a2872;
-  color: #fff;
-}
-
-footer span {
-  font-weight: bold;
-}
-
-footer .social {
-  display: flex;
-  gap: 20px;
-}
-
-footer .social a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 30px;
-}
-
-@media (max-width: 768px) {
-  footer {
-    flex-direction: column-reverse;
-    gap: 20px;
-  }
-}
-
-/* Scroll To Top */
 
 .scroll-up {
   position: fixed;
@@ -819,11 +718,6 @@ footer .social a {
     4s ease;
 }
 
-.scroll-up.scroll-active {
-  bottom: 40px;
-  opacity: 1;
-}
-
 .scroll-up:hover {
   background-color: #4a2872;
 }
@@ -840,6 +734,77 @@ footer .social a {
 
 .scroll-up.scroll-active {
   bottom: 20px;
+  opacity: 1;
 }
 
-/* Scroll To Top */
+body {
+  background: #07080c;
+  overflow-x: hidden;
+}
+
+.portfolio-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      1200px 700px at 20% 10%,
+      rgba(124, 92, 255, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 650px at 70% 20%,
+      rgba(41, 247, 215, 0.14),
+      transparent 62%
+    ),
+    #07080c;
+}
+
+.blob-1,
+.blob-2 {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.28;
+}
+
+.blob-1 {
+  top: -160px;
+  left: -140px;
+  background: rgba(124, 92, 255, 0.9);
+  animation: gerakBlob1 12s ease-in-out infinite alternate;
+}
+
+.blob-2 {
+  right: -170px;
+  bottom: -180px;
+  background: rgba(41, 247, 215, 0.75);
+  animation: gerakBlob2 15s ease-in-out infinite alternate;
+}
+
+@keyframes gerakBlob1 {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(180px, 120px);
+  }
+}
+
+@keyframes gerakBlob2 {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-160px, -100px);
+  }
+}
