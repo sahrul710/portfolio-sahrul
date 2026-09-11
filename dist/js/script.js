@@ -1,49 +1,71 @@
-const scrollup = document.querySelector(".scroll-up");
-window.onscroll = () => {
-  if (window.scrollY > 500) {
-    scrollup.classList.add("scroll-active");
-  } else {
-    scrollup.classList.remove("scroll-active");
-  }
-};
+// Scroll Up
+const scrollUp = document.querySelector(".scroll-up");
 
-// Tombol Geser Sertifikat
+window.addEventListener("scroll", () => {
+  if (!scrollUp) return;
 
+  scrollUp.classList.toggle("scroll-active", window.scrollY > 500);
+});
+
+// Geser Sertifikat
 const sertifikatBox = document.querySelector(".sertifikat-box");
 const nextBtn = document.querySelector(".next-btn");
 
-nextBtn.addEventListener("click", () => {
-  sertifikatBox.scrollBy({
-    left: 320,
-    behavior: "smooth",
+if (sertifikatBox && nextBtn) {
+  nextBtn.addEventListener("click", () => {
+    sertifikatBox.scrollBy({
+      left: 320,
+      behavior: "smooth",
+    });
   });
-});
+}
 
-emailjs.init("0WmBNWbSwkPmrU1ku");
-
+// EmailJS
 const form = document.getElementById("contact-form");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+if (form) {
+  emailjs.init("0WmBNWbSwkPmrU1ku");
 
-  emailjs
-    .sendForm(
-      "service_jmdoi0g",
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      "template_5e0wohe",
+    emailjs
+      .sendForm("service_jmdoi0g", "template_5e0wohe", this)
+      .then(() => {
+        alert("Pesan berhasil dikirim!");
+        form.reset();
+      })
+      .catch((error) => {
+        alert("Pesan gagal dikirim!");
+        console.error(error);
+      });
+  });
+}
 
-      this,
-    )
+// Ganti Bahasa Indonesia / English
+const langToggle = document.getElementById("lang-toggle");
 
-    .then(() => {
-      alert("Pesan berhasil dikirim!");
+let currentLanguage = "id";
 
-      form.reset();
-    })
+if (langToggle) {
+  langToggle.addEventListener("click", () => {
+    currentLanguage = currentLanguage === "id" ? "en" : "id";
 
-    .catch((error) => {
-      alert("Pesan gagal dikirim!");
-
-      console.log(error);
+    document.querySelectorAll("[data-id][data-en]").forEach((element) => {
+      element.textContent = element.dataset[currentLanguage];
     });
-});
+
+    document
+      .querySelectorAll("[data-placeholder-id][data-placeholder-en]")
+      .forEach((element) => {
+        element.placeholder =
+          currentLanguage === "id"
+            ? element.dataset.placeholderId
+            : element.dataset.placeholderEn;
+      });
+
+    langToggle.textContent = currentLanguage === "id" ? "EN" : "ID";
+
+    document.documentElement.lang = currentLanguage;
+  });
+}

@@ -17,6 +17,74 @@
   }
 }
 
+.navbar-box {
+  position: relative;
+}
+
+.lang-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  min-width: 45px;
+  height: 34px;
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.4);
+
+  transform: translateY(-50%) translateY(-2px);
+}
+
+.lang-toggle:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .lang-toggle {
+    right: 10px;
+
+    min-width: 42px;
+    height: 32px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+}
+
 .navbar {
   padding: 30px 0;
   background: transparent;
@@ -439,6 +507,291 @@
   }
 }
 
+/* =========================
+   PENGALAMAN KERJA & MAGANG
+========================= */
+
+.pengalaman {
+  padding: 90px 0;
+  color: #fff;
+}
+
+.pengalaman .container > h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.pengalaman .container > p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+}
+
+/* Wrapper Slider */
+
+.pengalaman-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Area Geser */
+
+.pengalaman-box {
+  display: flex;
+  gap: 18px;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  padding: 8px 5px 18px;
+
+  scrollbar-width: none;
+}
+
+.pengalaman-box::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+
+.pengalaman-card {
+  flex: 0 0 310px;
+
+  min-height: 380px;
+
+  padding: 24px;
+
+  border-radius: 20px;
+
+  background: rgba(8, 12, 22, 0.78);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(10px);
+
+  scroll-snap-align: start;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.pengalaman-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(255, 255, 255, 0.22);
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Judul Posisi */
+
+.pengalaman-card h2 {
+  font-size: 21px;
+  line-height: 1.4;
+
+  margin-bottom: 7px;
+
+  color: #fff;
+}
+
+/* Nama Instansi */
+
+.pengalaman-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+
+  color: rgba(100, 150, 255, 0.95);
+
+  margin-bottom: 18px;
+}
+
+/* Tanggal & Lokasi */
+
+.pengalaman-meta {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  font-size: 13px;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pengalaman-meta > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pengalaman-meta i {
+  width: 17px;
+
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Deskripsi */
+
+.pengalaman-card > p {
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  margin-bottom: 20px;
+}
+
+/* Tanggung Jawab */
+
+.pengalaman-card h4 {
+  font-size: 15px;
+
+  margin-bottom: 13px;
+
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* List */
+
+.pengalaman-card ul {
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.pengalaman-card li {
+  position: relative;
+
+  padding-left: 20px;
+
+  margin-bottom: 9px;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pengalaman-card li::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: rgba(100, 150, 255, 0.95);
+}
+
+/* Tombol Geser Kanan */
+
+.pengalaman-next {
+  position: absolute;
+
+  top: 50%;
+  right: -18px;
+
+  transform: translateY(-50%);
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 50%;
+
+  background: rgba(20, 24, 35, 0.85);
+
+  color: #fff;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  z-index: 5;
+
+  transition: 0.3s;
+}
+
+.pengalaman-next:hover {
+  background: rgba(255, 255, 255, 0.14);
+
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .pengalaman-card {
+    flex: 0 0 300px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .pengalaman {
+    padding: 70px 0;
+  }
+
+  .pengalaman .container > h1 {
+    font-size: 32px;
+  }
+
+  .pengalaman .container > p {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .pengalaman-box {
+    gap: 14px;
+    padding-bottom: 14px;
+  }
+
+  .pengalaman-card {
+    flex: 0 0 86%;
+
+    min-height: 370px;
+
+    padding: 22px;
+  }
+
+  .pengalaman-card h2 {
+    font-size: 20px;
+  }
+
+  .pengalaman-card h3 {
+    font-size: 15px;
+  }
+
+  .pengalaman-next {
+    display: none;
+  }
+}
 .sertifikat {
   padding: 100px 0;
   color: #fff;
