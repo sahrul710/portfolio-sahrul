@@ -17,6 +17,65 @@
   }
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 0 !important;
+  }
+
+  .navbar .container {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .navbar-box {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .menu {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+
+    overflow: visible !important;
+    white-space: nowrap;
+
+    flex: 1;
+  }
+
+  .menu li {
+    flex: 0 0 auto;
+  }
+
+  .menu li a {
+    font-size: 11px !important;
+    padding: 0 !important;
+    white-space: nowrap;
+  }
+
+  .lang-toggle {
+    position: static !important;
+    transform: none !important;
+
+    flex: 0 0 auto;
+
+    min-width: 34px !important;
+    width: 34px;
+    height: 28px;
+
+    padding: 0 !important;
+
+    font-size: 10px !important;
+
+    margin: 0 !important;
+  }
+}
+
 .navbar-box {
   position: relative;
 }
@@ -520,28 +579,29 @@
   text-align: center;
   font-size: 42px;
   margin-bottom: 12px;
+  color: #fff;
 }
 
 .pengalaman .container > p {
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.72);
   margin-bottom: 40px;
 }
-
-/* Wrapper Slider */
 
 .pengalaman-wrapper {
   position: relative;
   width: 100%;
 }
 
-/* Area Geser */
-
 .pengalaman-box {
   display: flex;
+  flex-wrap: nowrap;
   gap: 18px;
 
   overflow-x: auto;
+  overflow-y: hidden;
+
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 
@@ -554,91 +614,71 @@
   display: none;
 }
 
-/* Card */
-
 .pengalaman-card {
-  flex: 0 0 310px;
-
-  min-height: 380px;
+  flex: 0 0 300px;
+  min-width: 300px;
 
   padding: 24px;
 
   border-radius: 20px;
 
-  background: rgba(8, 12, 22, 0.78);
+  background: rgba(8, 12, 22, 0.82);
 
   border: 1px solid rgba(255, 255, 255, 0.1);
 
-  backdrop-filter: blur(10px);
+  color: #fff;
 
   scroll-snap-align: start;
 
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
+  box-sizing: border-box;
+
+  transition: 0.3s;
 }
 
 .pengalaman-card:hover {
   transform: translateY(-5px);
-
   border-color: rgba(255, 255, 255, 0.22);
-
-  background: rgba(255, 255, 255, 0.06);
 }
-
-/* Judul Posisi */
 
 .pengalaman-card h2 {
   font-size: 21px;
   line-height: 1.4;
-
-  margin-bottom: 7px;
-
+  margin: 0 0 6px;
   color: #fff;
 }
-
-/* Nama Instansi */
 
 .pengalaman-card h3 {
   font-size: 16px;
   font-weight: 600;
+  line-height: 1.4;
 
-  color: rgba(100, 150, 255, 0.95);
+  margin: 0 0 18px;
 
-  margin-bottom: 18px;
+  color: #6f9cff;
 }
-
-/* Tanggal & Lokasi */
 
 .pengalaman-meta {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 
-  gap: 9px;
-
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   font-size: 13px;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .pengalaman-meta > span {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .pengalaman-meta i {
-  width: 17px;
-
-  text-align: center;
-
+  width: 16px;
   color: rgba(255, 255, 255, 0.7);
 }
-
-/* Deskripsi */
 
 .pengalaman-card > p {
   font-size: 14px;
@@ -646,39 +686,31 @@
 
   color: rgba(255, 255, 255, 0.8);
 
-  margin-bottom: 20px;
+  margin: 0 0 18px;
 }
-
-/* Tanggung Jawab */
 
 .pengalaman-card h4 {
-  font-size: 15px;
-
-  margin-bottom: 13px;
-
-  color: rgba(255, 255, 255, 0.95);
+  font-size: 14px;
+  margin: 0 0 12px;
+  color: #fff;
 }
-
-/* List */
 
 .pengalaman-card ul {
   list-style: none;
-
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .pengalaman-card li {
   position: relative;
 
-  padding-left: 20px;
-
-  margin-bottom: 9px;
+  padding-left: 18px;
+  margin-bottom: 8px;
 
   font-size: 13px;
   line-height: 1.6;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .pengalaman-card li::before {
@@ -694,10 +726,10 @@
 
   border-radius: 50%;
 
-  background: rgba(100, 150, 255, 0.95);
+  background: #6f7cff;
 }
 
-/* Tombol Geser Kanan */
+/* Tombol kanan */
 
 .pengalaman-next {
   position: absolute;
@@ -718,15 +750,13 @@
 
   border-radius: 50%;
 
-  background: rgba(20, 24, 35, 0.85);
+  background: rgba(20, 24, 35, 0.9);
 
   color: #fff;
 
   font-size: 16px;
 
   cursor: pointer;
-
-  backdrop-filter: blur(10px);
 
   z-index: 5;
 
@@ -735,18 +765,6 @@
 
 .pengalaman-next:hover {
   background: rgba(255, 255, 255, 0.14);
-
-  transform: translateY(-50%) scale(1.08);
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1024px) {
-  .pengalaman-card {
-    flex: 0 0 300px;
-  }
 }
 
 /* =========================
@@ -755,29 +773,46 @@
 
 @media (max-width: 768px) {
   .pengalaman {
-    padding: 70px 0;
+    padding: 65px 0;
+    overflow: hidden;
+  }
+
+  .pengalaman .container {
+    width: 90%;
+    margin: 0 auto;
   }
 
   .pengalaman .container > h1 {
-    font-size: 32px;
+    font-size: 30px;
+    line-height: 1.3;
+    margin-bottom: 10px;
   }
 
   .pengalaman .container > p {
-    font-size: 14px;
-    margin-bottom: 30px;
+    font-size: 13px;
+    line-height: 1.6;
+
+    margin-bottom: 28px;
   }
 
   .pengalaman-box {
     gap: 14px;
-    padding-bottom: 14px;
+
+    padding: 5px 0 14px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
   }
 
   .pengalaman-card {
-    flex: 0 0 86%;
-
-    min-height: 370px;
+    flex: 0 0 84%;
+    min-width: 84%;
 
     padding: 22px;
+
+    border-radius: 18px;
   }
 
   .pengalaman-card h2 {
@@ -788,10 +823,23 @@
     font-size: 15px;
   }
 
+  .pengalaman-meta {
+    font-size: 12px;
+  }
+
+  .pengalaman-card > p {
+    font-size: 13px;
+  }
+
+  .pengalaman-card li {
+    font-size: 12px;
+  }
+
   .pengalaman-next {
     display: none;
   }
 }
+
 .sertifikat {
   padding: 100px 0;
   color: #fff;
