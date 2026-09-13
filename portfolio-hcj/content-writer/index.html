@@ -6,147 +6,429 @@
 
     <title>Content Writer | Sahrul Fatkhur Rozi</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
       }
 
       body {
-        font-family: Arial, sans-serif;
-        background: #101116;
-        color: #ffffff;
         min-height: 100vh;
-        padding: 50px 20px;
+
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(70, 95, 200, 0.35),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(0, 150, 130, 0.25),
+            transparent 40%
+          ),
+          #070b14;
+
+        color: #fff;
+      }
+
+      .content-writer {
+        padding: 70px 5%;
       }
 
       .container {
-        max-width: 850px;
+        width: 100%;
+        max-width: 1300px;
         margin: auto;
       }
 
-      h1 {
+      .content-writer h1 {
         text-align: center;
         font-size: 42px;
-        margin-bottom: 15px;
+        margin-bottom: 8px;
       }
 
-      .intro {
+      .subtitle {
+        max-width: 700px;
+        margin: 0 auto 45px;
+
         text-align: center;
-        color: #bbbbbb;
-        line-height: 1.6;
-        margin-bottom: 40px;
+
+        font-size: 15px;
+        line-height: 1.7;
+
+        color: rgba(255, 255, 255, 0.7);
       }
 
-      .works {
-        display: flex;
-        flex-direction: column;
+      /* =========================
+         GRID
+      ========================= */
+
+      .content-grid {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
         gap: 20px;
       }
 
-      .work {
-        background: #1b1c23;
-        border: 1px solid #30313a;
-        border-radius: 15px;
-        padding: 25px;
+      /* =========================
+         CARD
+      ========================= */
+
+      .content-card {
+        overflow: hidden;
+
+        border-radius: 18px;
+
+        background: rgba(255, 255, 255, 0.05);
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        backdrop-filter: blur(10px);
+
+        display: flex;
+        flex-direction: column;
+
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          background 0.3s ease;
       }
 
-      .work h2 {
-        font-size: 22px;
-        margin-bottom: 10px;
+      .content-card:hover {
+        transform: translateY(-6px);
+
+        border-color: rgba(255, 255, 255, 0.25);
+
+        background: rgba(255, 255, 255, 0.07);
       }
 
-      .work p {
-        color: #bbbbbb;
-        line-height: 1.6;
+      /* =========================
+         GAMBAR
+      ========================= */
+
+      .content-card img {
+        width: 100%;
+        height: 160px;
+
+        display: block;
+
+        object-fit: cover;
+        object-position: top;
+      }
+
+      /* =========================
+         ISI CARD
+      ========================= */
+
+      .content-card-body {
+        padding: 18px;
+
+        display: flex;
+        flex-direction: column;
+
+        flex: 1;
+      }
+
+      .platform {
+        width: fit-content;
+
+        padding: 4px 9px;
+
+        border-radius: 20px;
+
+        background: rgba(90, 110, 255, 0.12);
+
+        color: rgba(130, 165, 255, 0.95);
+
+        font-size: 11px;
+        font-weight: 500;
+
+        margin-bottom: 12px;
+      }
+
+      .content-card-body h2 {
+        font-size: 18px;
+        line-height: 1.45;
+
+        margin-bottom: 9px;
+      }
+
+      .content-card-body p {
+        font-size: 13px;
+        line-height: 1.7;
+
+        color: rgba(255, 255, 255, 0.7);
+
         margin-bottom: 20px;
       }
 
-      .work a {
-        display: inline-block;
-        background: #6c45a8;
-        color: #ffffff;
-        text-decoration: none;
-        padding: 11px 20px;
-        border-radius: 8px;
-        font-weight: 600;
-      }
+      /* =========================
+         BUTTON
+      ========================= */
 
-      .work a:hover {
-        background: #8157c2;
-      }
+      .content-card-body a {
+        margin-top: auto;
 
-      .back-container {
+        display: block;
+
+        padding: 10px 12px;
+
         text-align: center;
-        margin-top: 40px;
-      }
 
-      .back {
-        color: #cccccc;
+        border-radius: 9px;
+
         text-decoration: none;
-        font-size: 15px;
+
+        color: #fff;
+
+        background: rgba(90, 110, 255, 0.7);
+
+        font-size: 13px;
+        font-weight: 600;
+
+        transition: 0.3s;
       }
 
-      .back:hover {
-        color: #ffffff;
+      .content-card-body a:hover {
+        background: rgba(90, 110, 255, 0.95);
+
+        transform: translateY(-2px);
+      }
+
+      /* =========================
+         BACK
+      ========================= */
+
+      .back-btn {
+        display: block;
+
+        width: fit-content;
+
+        margin: 45px auto 0;
+
+        padding: 9px 14px;
+
+        border-radius: 8px;
+
+        color: rgba(255, 255, 255, 0.65);
+
+        text-decoration: none;
+
+        font-size: 13px;
+
+        transition: 0.3s;
+      }
+
+      .back-btn:hover {
+        color: #fff;
+
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      /* =========================
+         TABLET
+      ========================= */
+
+      @media (max-width: 1000px) {
+        .content-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* =========================
+         MOBILE
+      ========================= */
+
+      @media (max-width: 600px) {
+        .content-writer {
+          padding: 45px 12px;
+        }
+
+        .content-writer h1 {
+          font-size: 29px;
+        }
+
+        .subtitle {
+          font-size: 12px;
+          line-height: 1.6;
+
+          margin-bottom: 28px;
+
+          padding: 0 10px;
+        }
+
+        /*
+          Tetap 2 card di HP
+        */
+
+        .content-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+
+          gap: 10px;
+        }
+
+        .content-card {
+          border-radius: 13px;
+        }
+
+        .content-card img {
+          height: 105px;
+        }
+
+        .content-card-body {
+          padding: 11px;
+        }
+
+        .platform {
+          padding: 3px 7px;
+
+          font-size: 8px;
+
+          margin-bottom: 8px;
+        }
+
+        .content-card-body h2 {
+          font-size: 12px;
+          line-height: 1.4;
+
+          margin-bottom: 7px;
+        }
+
+        .content-card-body p {
+          font-size: 9px;
+          line-height: 1.55;
+
+          margin-bottom: 12px;
+        }
+
+        .content-card-body a {
+          padding: 8px 5px;
+
+          border-radius: 7px;
+
+          font-size: 9px;
+        }
+
+        .back-btn {
+          margin-top: 30px;
+
+          font-size: 11px;
+        }
       }
     </style>
   </head>
 
   <body>
-    <div class="container">
-      <h1>Content Writer</h1>
+    <section class="content-writer">
+      <div class="container">
+        <h1>Content Writer</h1>
 
-      <p class="intro">
-        Kumpulan karya penulisan artikel dan konten informatif untuk berbagai
-        platform digital.
-      </p>
+        <p class="subtitle">
+          Kumpulan karya penulisan artikel dan konten informatif untuk berbagai
+          platform digital.
+        </p>
 
-      <div class="works">
-        <!-- KUMPARAN -->
-        <div class="work">
-          <h2>KUMPARAN</h2>
+        <div class="content-grid">
+          <!-- ARTIKEL 1 -->
+          <div class="content-card">
+            <img src="./images/artikel1.png" alt="Artikel Kumparan" />
 
-          <p>
-            Kumpulan artikel yang saya tulis dan publikasikan melalui platform
-            Kumparan.
-          </p>
+            <div class="content-card-body">
+              <span class="platform">Kumparan</span>
 
-          <a
-            href="https://kumparan.com/sahrul-fr07"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Lihat Profil Kumparan
-          </a>
+              <p>
+                Artikel informatif yang saya tulis dan publikasikan melalui
+                platform Kumparan.
+              </p>
+
+              <a
+                href="https://kumparan.com/sahrul-fr07/23yGD1b6PJI?utm_source=Desktop&utm_medium=copy-to-clipboard&shareID=1Ehd2jXEcA2n"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lihat Artikel
+              </a>
+            </div>
+          </div>
+
+          <!-- ARTIKEL 2 -->
+          <div class="content-card">
+            <img src="./images/artikel2.png" alt="Artikel Kumparan" />
+
+            <div class="content-card-body">
+              <span class="platform">Kumparan</span>
+
+              <p>
+                Artikel yang saya susun dengan pendekatan informatif dan
+                berbasis riset.
+              </p>
+
+              <a
+                href="https://kumparan.com/sahrul-fr07/245hhbUUENN?utm_source=Desktop&utm_medium=copy-to-clipboard&shareID=qs76f9p1cGx5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lihat Artikel
+              </a>
+            </div>
+          </div>
+
+          <!-- ARTIKEL 3 -->
+          <div class="content-card">
+            <img src="./images/artikel3.png" alt="Artikel kompasiana" />
+
+            <div class="content-card-body">
+              <span class="platform">Kompasiana</span>
+
+              <h2>Judul Artikel Ketiga</h2>
+
+              <p>
+                Artikel yang disusun berdasarkan riset topik dan kebutuhan
+                pencarian pengguna.
+              </p>
+
+              <a
+                href="https://www.kompasiana.com/sahrul710/6a9b03acc925c4450b4d7d2b/merajut-asa-ekowisata-lewat-pesona-bunga-refugia"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lihat Artikel
+              </a>
+            </div>
+          </div>
+
+          <!-- ARTIKEL 4 -->
+          <div class="content-card">
+            <img src="./images/artikel4.png" alt="Idntimes" />
+
+            <div class="content-card-body">
+              <span class="platform">Idntimes</span>
+
+              <p>
+                Karya penulisan lainnya yang saya buat sebagai bagian dari
+                Idntimes.
+              </p>
+
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                Lihat Artikel
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- KOMPASIANA -->
-        <div class="work">
-          <h2>KOMPASIANA</h2>
-
-          <p>
-            Artikel yang saya tulis dan publikasikan melalui platform
-            Kompasiana.
-          </p>
-
-          <a
-            href="https://www.kompasiana.com/sahrul710/6a9b03acc925c4450b4d7d2b/merajut-asa-ekowisata-lewat-pesona-bunga-refugia"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Lihat Profil Kompasiana
-          </a>
-        </div>
+        <a href="../../index.html" class="back-btn"> ← Kembali ke Portfolio </a>
       </div>
-
-      <!-- KEMBALI KE CARD CONTENT WRITER -->
-      <div class="back-container">
-        <a href="../../index.htm#content-writer" class="back">
-          Kembali ke Portfolio
-        </a>
-      </div>
-    </div>
+    </section>
   </body>
 </html>
